@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <!-- link the favicon of the App-->
+    <link rel="icon" href="images/siren.png" />
+    <!-- link CSS File -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- bootstrap css cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body class="font-monospace">
+    <!-- //////////////////////////////////////////////////////////////// -->
+    <nav id="home" class="navbar navbar-expand-lg bg-body-tertiary mb-5">
+      <div class="container-fluid">
+        <a class="navbar-brand me-5 pe-5 fs-1 fw-bold" href="#home"
+          >Memory Game</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <div class="navbar-nav fs-5 fw-bold">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            <a class="nav-link" href="#how">HowToPlay</a>
+            <a class="nav-link" href="#lead">Leaderboard</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- //////////////////////////////////////////////////////////////// -->
+    <div class="container">
+      <div class="row">
+        <!-- full screen div when you open the APP -->
+        <div
+          class="control position-fixed top-0 start-0 d-flex justify-content-center align-items-center"
+        >
+          <span class="p-2 align-center fw-bold">Start Game</span>
+        </div>
+        <div
+          id="home"
+          class="head d-flex flex-column flex-md-row justify-content-between align-items-center bg-info ps-4 pe-4 p-3 fs-3 fw-bold border border-secondary rounded border-2"
+        >
+          <div class="info">Hello <span></span></div>
+          <div class="available">Available Tries: <span>15</span></div>
+          <div class="tries c-danger">Wrong Tries: <span>0</span></div>
+        </div>
+        <div
+          class="game-block mt-2 d-flex justify-content-between align-items-center flex-wrap gap-2 ms-auto me-auto"
+        >
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="cheery"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/cherry.png" alt="cherry" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="cheery"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/cherry.png" alt="cherry" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="development"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/development.png" alt="development" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="development"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/development.png" alt="development" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="blackjack"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/blackjack.png" alt="blackjack" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="blackjack"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/blackjack.png" alt="blackjack" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="cctv-camera"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/cctv-camera.png" alt="cctv-camera" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="cctv-camera"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/cctv-camera.png" alt="cctv-camera" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="cocktail"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/cocktail.png" alt="cocktail" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="cocktail"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/cocktail.png" alt="cocktail" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="dice"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/dice.png" alt="dice" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="dice"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/dice.png" alt="dice" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="domino"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/domino.png" alt="domino" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="domino"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/domino.png" alt="domino" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="gold"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/gold.png" alt="gold" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="gold"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/gold.png" alt="gold" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="graphic-designer"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/graphic-designer.png" alt="graphic-designer" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="graphic-designer"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/graphic-designer.png" alt="graphic-designer" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="siren"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/siren.png" alt="siren" />
+            </div>
+          </div>
+          <div
+            class="block position-relative d-flex justify-content-center align-items-center"
+            data-photo="siren"
+          >
+            <div
+              class="front d-flex justify-content-center align-items-center border"
+            >
+              !
+            </div>
+            <div
+              class="back d-flex justify-content-center align-items-center bg-dark p-3"
+            >
+              <img src="images/siren.png" alt="siren" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="common success-popup opacity-0 position-fixed d-flex flex-column justify-content-between align-items-center top-50 start-50 bg-info p-5 fs-5 fw-bold"
+      >
+        <div class="mb-1 con" style="width: 300px; text-align: center">
+          Congratulations🎉<span class="user-success"></span>🔥
+        </div>
+        <button id="btn-success" class="btn btn-success fw-bold common">
+          Start New Game
+        </button>
+      </div>
+      <div
+        class="common fail-popup opacity-0 position-fixed d-flex flex-column justify-content-between align-items-center top-50 start-50 bg-danger p-5 fs-5 fw-bold"
+      >
+        <div class="mb-1 con" style="width: 300px; text-align: center">
+          GameOver💣<span class="user-fail"></span>😜
+        </div>
+        <button id="btn-fail" class="btn btn-secondary fw-bold">
+          Play Again
+        </button>
+      </div>
+      <hr />
+      <!-- How To Play Div -->
+      <div id="how" class="how-to-play bg-info p-5">
+        <h3 class="fs-2 fw-bold">How To Play ✍</h3>
+        <p>
+          Welcome to "Memory Game" a fun memory game! In this game, your goal is
+          to match pairs of cards within a
+          <span class="bg-danger p-1 badge">15</span> number of attempts. Are
+          you ready to test your memory skills? Let's get started!
+        </p>
+        <p>
+          <span class="fw-bold fs-3">Objective</span>
+          <br />
+          The objective of the game is to find all the matching pairs of cards
+          on the game board. Each turn, you can flip over two cards. If the
+          cards match, they will stay face up. If they don't match, they will be
+          flipped back over, and you will have to remember their positions for
+          future turns.
+        </p>
+        <div>
+          <span class="fw-bold fs-3"> Instructions </span>
+          <ol>
+            <li>Click on any two cards to reveal their hidden symbols.</li>
+            <li>
+              If the two cards match, they will remain face up on the board.
+            </li>
+            <li>
+              If the cards do not match, they will be flipped back over, and you
+              can try again.
+            </li>
+            <li>
+              Remember the position of cards you have already seen to increase
+              your chances of making successful matches.
+            </li>
+            <li>
+              Continue flipping pairs of cards until you have successfully
+              matched all pairs.
+            </li>
+          </ol>
+          <br />
+          <span class="fw-bold fs-3">Scoring</span>
+          <br />
+          <p>
+            Your score will be based on the number of attempts you take to match
+            all the pairs. Try to complete the game with as few attempts as
+            possible to achieve a high score.
+          </p>
+          <br />
+          <span class="fw-bold fs-3">Tips</span>
+          <br />
+          <p>
+            - Concentrate and focus on remembering the positions of the cards
+            you flip over. - Take your time to strategize and plan your moves to
+            maximize your chances of matching pairs efficiently.
+          </p>
+          <br />
+          <span class="fw-bold fs-3">Conclusion</span>
+          <br />
+          <p>
+            Now that you know how to play "Memory Game," it's time to put your
+            memory skills to the test! Click "Start Game" to begin matching the
+            pairs of cards and see how well you can perform. Good luck, and have
+            fun playing!
+          </p>
+        </div>
+      </div>
+      <!-- data for users -->
+      <hr />
+      <table
+        id="lead"
+        class="table table-striped border table-hover border-primary caption-top"
+      >
+        <caption class="fs-3 text-center fw-bold">
+          Leaderboard
+        </caption>
+        <thead class="table-primary">
+          <th>UserName</th>
+          <th class="text-center">Score Status</th>
+          <th class="text-center">Wrong Tries</th>
+          <th class="text-center">Number Of Tries</th>
+        </thead>
+        <tbody class="table-dark fw-bold body"></tbody>
+      </table>
+
+      <!-- Audios -->
+      <audio id="welcome" src="Sounds/welcome.mp3" preload="auto"></audio>
+      <audio id="success" src="Sounds/Success.mp3" preload="auto"></audio>
+      <audio id="fail" src="Sounds/Fail.mp3" preload="auto"></audio>
+      <audio id="congratz" src="Sounds/Congratz.mp3" preload="auto"></audio>
+      <audio id="gameover" src="Sounds/GameOver.mp3" preload="auto"></audio>
+    </div>
+    <!-- footer -->
+    <footer id="footer" class="bg-dark p-1 text-center fs-3">
+      <div class="badge">
+        Developed BY
+        <a href="https://github.com/shawky-13" target="_blank">ShawkyMshrif</a>
+      </div>
+    </footer>
+    <!-- ////////////////////////////////////////////////////////////////////////// -->
+    <!-- bootstrap js cdn -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
